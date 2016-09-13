@@ -1,0 +1,11 @@
+= Golang + rabbitmq  amqp
+
+Simple example golang + rabbitmq amqp 
+
+Following tutorial -> https://www.rabbitmq.com/tutorials/tutorial-one-go.html
+
+
+== Run
+
+go run sender.go
+go run receiver.go
