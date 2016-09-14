@@ -48,7 +48,7 @@ func main() {
 
    go func() {
      for d := range msgs {
-       log.Printf("Received a message: %s with tracer %s", d.Body, d.Headers["TRACER"])
+       log.Printf("Received a message: %s with traceid %s", d.Body, d.Headers["spanTraceId"])
      }
    }()
 

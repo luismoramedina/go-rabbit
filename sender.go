@@ -41,7 +41,7 @@ func send() {
 
    body := "hello from go"
    var headers = amqp.Table{}
-   headers["TRACER"] = "go id"
+   headers["spanTraceId"] = "go id"
 
    err = ch.Publish(
      "",     // exchange
