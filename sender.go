@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-   fmt.Println("Hello")
    send()
 }
 
@@ -40,13 +39,17 @@ func send() {
    )
    failOnError(err, "Failed to declare a queue")
 
-   body := "hello"
+   body := "hello from go"
+   var headers = amqp.Table{}
+   headers["TRACER"] = "go id"
+
    err = ch.Publish(
      "",     // exchange
      q.Name, // routing key
      false,  // mandatory
      false,  // immediate
      amqp.Publishing {
+       Headers: headers,
        ContentType: "text/plain",
        Body:        []byte(body),
      })
